@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1: Comparing Weather Data Across North America</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="tooltip" style="display:none"></div> 
+    <div class="container">
+        <h1>Assignment 1: Comparing Weather Data Across North America</h1>
+        <p>Write Up: Hello and welcome to our visualization of weather data across North America! This dataset gives a multitude of variables, for weather data across many stations in North America over 1/1/2017 to 9/21/2017. In this visualizations we show the averages of all of these variables over all of the states, provinces, and territories. The variables include "Min Temperature (°F)",
+    Max Temperature (°F),
+    Average Temperature (°F),
+    Average Wind Speed (mph),
+    Direction of Fastest Wind Gust (°),
+    Fastest Wind Gust (mph),
+    Snowfall (in),
+    Snow Depth (in),
+    and Precipitation (in).  We decided to display the data with a bar graph, as we decided it was the cleanest way to compare the locations for clarity. Our implemented features are include, a slider and date box that allows the user to compare varibables day by day. A dropdown which allows them to switch between variables. The user can click up to 5 bars at one time which gives them a unique color, and displays their yearly data within a line graph at the bottom with their color in the legend, where they can do up to 5 bars at one time. Tooltips which appear when bars are hovered over that allow the user to see the locations ranking where 1 is the highest and its current value.
+    Our data is sourced from here, https://zcliu.github.io/teaching/CMSC471/assignments/weather.csv and our work adapts our work from labs 4-5 where the slider was used, though we made sure to take our own liberties and add new ideas to our visualization. As for how we split the work, we both started by brainstorming which dataset we wanted to use, and how we wanted to visualize it, the idea to use a bar graph to show the averages from locations was Ethans, while Manas gave input with the idea for allowing the user to show specific locations in a line graph. After this was established, Ethan got to work on getting the slider (date box), and variables working for the bar graph which took about 3-4 hours total, mainly due to some issues with getting the domain of the y axis working, and working with d3's time system. After this was completed, Manas gave comments on Ethans work and started on the functionality with the line graph, which took about 3 hours. After this was completed, both worked on bugfixing (problems with bar colors) and implementing the tooltips, making the entire project take about 8 in people hours. The parts that took the longest were A: brainstorming ideas on how to display our data, and B: bugfixing.</p>
+         <div class="controls">
+            <script src="https://d3js.org/d3.v7.js"></script>
+            <script src="https://unpkg.com/d3-simple-slider"></script>
+            <p id="value"></p>
+            <div id="slider"></div>
+            <input id="date" type="date" min="2017-01-01" max="2017-09-21">
+            X: <select id="xVariable" class="variable"></select>
+            Y: <select id="yVariable" class="variable"></select>
+            
+         </div>
+        <div id="vis"></div>
+        <div id="line"></div>
+    
+
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
